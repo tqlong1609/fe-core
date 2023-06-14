@@ -1,0 +1,30 @@
+{
+  "name": "generate",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/generate/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/generate",
+        "main": "packages/generate/src/index.ts",
+        "tsConfig": "packages/generate/tsconfig.lib.json",
+        "assets": ["packages/generate/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs generate {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/generate/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
