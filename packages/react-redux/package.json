@@ -1,5 +1,9 @@
 {
   "name": "@tqlong1609/react-redux",
   "version": "0.0.1",
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
+    "react-redux": "^8.1.0"
+  }
 }

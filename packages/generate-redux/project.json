@@ -1,0 +1,30 @@
+{
+  "name": "generate-redux",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/generate-redux/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/generate-redux",
+        "main": "packages/generate-redux/src/index.ts",
+        "tsConfig": "packages/generate-redux/tsconfig.lib.json",
+        "assets": ["packages/generate-redux/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs generate-redux {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/generate-redux/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

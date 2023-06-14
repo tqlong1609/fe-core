@@ -1,1 +1,1 @@
-export * from './lib/react-redux';
+export { default } from './Provider';
