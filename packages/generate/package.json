@@ -2,8 +2,11 @@
   "name": "@tqlong1609/generate",
   "version": "0.0.1",
   "type": "commonjs",
-  "bin": "bin/index.js",
+  "bin": "src/bin/index.js",
   "dependencies": {
     "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/yargs": "^17.0.24"
   }
 }
