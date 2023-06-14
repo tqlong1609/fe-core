@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@tqlong1609/react-redux": ["packages/react-redux/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
