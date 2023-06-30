@@ -9,7 +9,10 @@ export const downloadFile = async (url: string, filePath: string) => {
 };
 
 // Function to download a folder
-export const downloadFolder = async (folderUrl: string, localFolderPath: string) => {
+export const downloadFolder = async (
+  folderUrl: string,
+  localFolderPath: string
+) => {
   const response = await axios.get(folderUrl);
   const files = response.data;
 
@@ -26,4 +29,15 @@ export const downloadFolder = async (folderUrl: string, localFolderPath: string)
       await downloadFile(file.download_url, filePath);
     }
   }
+};
+
+// Function to download a file with url
+export const downloadFileUrl = async (
+  folderUrl: string,
+  localFolderPath: string
+) => {
+  const response = await axios.get(folderUrl);
+  const files = response.data;
+
+  await downloadFile(files.download_url, localFolderPath);
 };
