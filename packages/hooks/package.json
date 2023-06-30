@@ -1,0 +1,11 @@
+{
+  "name": "@tqlong1609/hooks",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.14"
+  }
+}
