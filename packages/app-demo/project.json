@@ -1,7 +1,7 @@
 {
-  "name": "my-new-app",
+  "name": "app-demo",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/my-new-app",
+  "sourceRoot": "packages/app-demo",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,11 +9,11 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/packages/my-new-app"
+        "outputPath": "dist/packages/app-demo"
       },
       "configurations": {
         "development": {
-          "outputPath": "packages/my-new-app"
+          "outputPath": "packages/app-demo"
         },
         "production": {}
       }
@@ -22,16 +22,16 @@
       "executor": "@nx/next:server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "my-new-app:build",
+        "buildTarget": "app-demo:build",
         "dev": true
       },
       "configurations": {
         "development": {
-          "buildTarget": "my-new-app:build:development",
+          "buildTarget": "app-demo:build:development",
           "dev": true
         },
         "production": {
-          "buildTarget": "my-new-app:build:production",
+          "buildTarget": "app-demo:build:production",
           "dev": false
         }
       }
@@ -39,14 +39,14 @@
     "export": {
       "executor": "@nx/next:export",
       "options": {
-        "buildTarget": "my-new-app:build:production"
+        "buildTarget": "app-demo:build:production"
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "packages/my-new-app/jest.config.ts",
+        "jestConfig": "packages/app-demo/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -60,7 +60,7 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/my-new-app/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["packages/app-demo/**/*.{ts,tsx,js,jsx}"]
       }
     }
   },
