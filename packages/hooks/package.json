@@ -1,5 +1,8 @@
 {
   "name": "@tqlong1609/hooks",
   "version": "0.0.1",
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "html2canvas": "^1.4.1"
+  }
 }
