@@ -25,7 +25,8 @@
     "**/*.jsx",
     "../../packages/app-demo/.next/types/**/*.ts",
     "../../dist/packages/app-demo/.next/types/**/*.ts",
-    "next-env.d.ts"
+    "next-env.d.ts",
+    "../hooks/src/lib/*.ts"
   ],
   "exclude": [
     "node_modules",
