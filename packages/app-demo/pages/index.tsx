@@ -1,28 +1,25 @@
-import { usePrintComponentImage } from '@tqlong1609/hooks';
+import {
+  useSessionStorageTabs,
+  putSessionStorageTabs,
+} from '@tqlong1609/hooks';
+
+const key1 = 'abc1';
 
 export function Home() {
-  const [printRef, { handleDownloadImage }] = usePrintComponentImage();
-
+  const { token: token1 } = useSessionStorageTabs(key1);
   return (
     <>
       <button
         onClick={() => {
-          handleDownloadImage(() => {
-            alert('success');
+          putSessionStorageTabs({
+            key: key1,
+            value: 'hello1',
           });
         }}
       >
-        Click
+        Click 1
       </button>
-      <div ref={printRef}>
-        <img
-          src="tree-736885_1280.jpg"
-          alt="image"
-          width={'500px'}
-          height={'500px'}
-        />
-        <div>xin chao hello</div>
-      </div>
+      <div>value 1: {token1}</div>
     </>
   );
 }
