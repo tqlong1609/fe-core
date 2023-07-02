@@ -1,6 +1,6 @@
 {
   "name": "@tqlong1609/generate",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "commonjs",
   "bin": "src/bin/index.js",
   "dependencies": {
