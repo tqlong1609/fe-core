@@ -1,5 +1,8 @@
 export type ArgsValue = 'redux' | 'hooks';
-export type HooksType = 'useCopyToClipboard';
+export type HooksType =
+  | 'copy-clipboard'
+  | 'copy-clipboard-component-image'
+  | 'session-storage-tabs';
 
 /**
  * repoUrl: GitHub repository URL
@@ -22,12 +25,23 @@ export const configs: Record<ArgsValue, Configs | Record<HooksType, Configs>> =
       localDir: './redux',
       setupPackage: '@reduxjs/toolkit react-redux',
     },
-    // npx @tqlong1609/generate --generate hooks --type useCopyToClipboard
+    // npx @tqlong1609/generate --generate hooks --type {type}
     hooks: {
-      useCopyToClipboard: {
+      'copy-clipboard': {
         typeFile: 'file',
         repoUrl: '/packages/hooks/src/lib/useCopyToClipboard.ts',
         localDir: './useCopyToClipboard.ts',
+      },
+      'copy-clipboard-component-image': {
+        typeFile: 'file',
+        repoUrl: '/packages/hooks/src/lib/useCopyComponentImageToClipboard.ts',
+        localDir: './useCopyComponentImageToClipboard.ts',
+        setupPackage: 'html2canvas',
+      },
+      'session-storage-tabs': {
+        typeFile: 'file',
+        repoUrl: '/packages/hooks/src/lib/useSessionStorageTabs.ts',
+        localDir: './useSessionStorageTabs.ts',
       },
     },
   };

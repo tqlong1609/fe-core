@@ -18,7 +18,7 @@ export async function copyBlobToClipboard(blob: Blob): Promise<void> {
   await navigator.clipboard.write([clipboardItem]);
 }
 
-export const usePrintComponentImage = (): [
+export const useCopyComponentImageToClipboard = (): [
   React.LegacyRef<HTMLDivElement> | undefined,
   {
     handleDownloadImage: (resolve?: () => void) => Promise<void>;

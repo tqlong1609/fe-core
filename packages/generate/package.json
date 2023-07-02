@@ -1,6 +1,6 @@
 {
   "name": "@tqlong1609/generate",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "type": "commonjs",
   "bin": "src/bin/index.js",
   "dependencies": {
@@ -8,5 +8,14 @@
   },
   "devDependencies": {
     "@types/yargs": "^17.0.24"
-  }
+  },
+  "keywords": [
+    "front-end",
+    "front-end-core",
+    "generate",
+    "module",
+    "hooks",
+    "redux",
+    "common-function"
+  ]
 }

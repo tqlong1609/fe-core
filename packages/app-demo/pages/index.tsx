@@ -6,7 +6,7 @@ import {
 const key1 = 'abc1';
 
 export function Home() {
-  const { token: token1 } = useSessionStorageTabs(key1);
+  const { token } = useSessionStorageTabs(key1);
   return (
     <>
       <button
@@ -17,9 +17,9 @@ export function Home() {
           });
         }}
       >
-        Click 1
+        Click
       </button>
-      <div>value 1: {token1}</div>
+      <div>value: {token}</div>
     </>
   );
 }

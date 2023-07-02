@@ -8,7 +8,7 @@
   "include": [
     "src/**/*.ts",
     "src/lib/useCopyToClipboard.ts",
-    "src/lib/usePrintComponentImage.ts"
+    "src/lib/useCopyComponentImageToClipboard.ts"
   ],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

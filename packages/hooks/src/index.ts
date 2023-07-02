@@ -1,3 +1,3 @@
 export * from './lib/useCopyToClipboard';
-export * from './lib/usePrintComponentImage';
+export * from './lib/useCopyComponentImageToClipboard';
 export * from './lib/useSessionStorageTabs';
