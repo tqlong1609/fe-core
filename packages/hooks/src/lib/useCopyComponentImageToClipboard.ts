@@ -1,5 +1,5 @@
-import React = require('react');
 import html2canvas from 'html2canvas';
+import { useRef } from 'react';
 
 /**
  * Copies a blob to user's clipboard.
@@ -24,14 +24,12 @@ export const useCopyComponentImageToClipboard = (): [
     handleDownloadImage: (resolve?: () => void) => Promise<void>;
   }
 ] => {
-  const printRef = React.useRef<any>();
+  const printRef = useRef<any>();
   const handleDownloadImage = async (resolve?: () => void) => {
     const element = printRef.current;
     const canvas = await html2canvas(element);
     canvas.toBlob(
       (blob) => {
-        console.log('blob', blob);
-
         if (blob) {
           copyBlobToClipboard(blob);
           resolve && resolve();

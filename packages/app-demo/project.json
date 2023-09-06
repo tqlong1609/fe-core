@@ -28,7 +28,8 @@
       "configurations": {
         "development": {
           "buildTarget": "app-demo:build:development",
-          "dev": true
+          "dev": true,
+          "hostname": "0.0.0.0"
         },
         "production": {
           "buildTarget": "app-demo:build:production",
