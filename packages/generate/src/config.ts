@@ -2,7 +2,9 @@ export type ArgsValue = 'redux' | 'hooks';
 export type HooksType =
   | 'copy-clipboard'
   | 'copy-clipboard-component-image'
-  | 'session-storage-tabs';
+  | 'session-storage-tabs'
+  | 'count-down'
+  | 'interval';
 
 /**
  * repoUrl: GitHub repository URL
@@ -14,6 +16,7 @@ export type Configs = {
   repoUrl: string;
   localDir: string;
   setupPackage?: string;
+  relatedHooks?: HooksType[];
 };
 
 export const configs: Record<ArgsValue, Configs | Record<HooksType, Configs>> =
@@ -42,6 +45,17 @@ export const configs: Record<ArgsValue, Configs | Record<HooksType, Configs>> =
         typeFile: 'file',
         repoUrl: '/packages/hooks/src/lib/useSessionStorageTabs.ts',
         localDir: './useSessionStorageTabs.ts',
+      },
+      'count-down': {
+        typeFile: 'file',
+        repoUrl: '/packages/hooks/src/lib/useCountDown.ts',
+        localDir: './useCountDown.ts',
+        relatedHooks: ['interval'],
+      },
+      interval: {
+        typeFile: 'file',
+        repoUrl: '/packages/hooks/src/lib/useInterval.ts',
+        localDir: './useInterval.ts',
       },
     },
   };
