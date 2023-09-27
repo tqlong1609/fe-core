@@ -8,6 +8,8 @@ The Generate library supports generating javascript code to serve the common fea
 - [useCopyToClipboard](#copy-to-clipboard-hook)
 - [useCopyClipboardComponentImage](#copy-clipboard-component-image-hook)
 - [useSessionStorageTabs](#session-storage-tabs-hook)
+- [useCountDown](#count-down-hook)
+- [useInterval](#interval-hook)
 
 ### Redux setup
 
@@ -143,7 +145,7 @@ function Home() {
 }
 ```
 
-### useCountDown
+### Count Down Hook
 
 ---
 
@@ -179,7 +181,7 @@ function Home() {
 }
 ```
 
-### useInterval
+### Interval Hook
 
 ---
 
