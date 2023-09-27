@@ -1,4 +1,4 @@
-# Generate v0.0.5
+# Generate v0.0.10
 
 The Generate library supports generating javascript code to serve the common features in front end.
 
