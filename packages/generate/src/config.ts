@@ -1,61 +1,43 @@
-export type ArgsValue = 'redux' | 'hooks';
-export type HooksType =
-  | 'copy-clipboard'
-  | 'copy-clipboard-component-image'
-  | 'session-storage-tabs'
-  | 'count-down'
-  | 'interval';
-
-/**
- * repoUrl: GitHub repository URL
- * localDir: Local directory where you want to save the downloaded folder
- * setupPackage: Notification for install packages (if has)
- */
-export type Configs = {
-  typeFile: 'file' | 'folder';
-  repoUrl: string;
-  localDir: string;
-  setupPackage?: string;
-  relatedHooks?: HooksType[];
-};
-
-export const configs: Record<ArgsValue, Configs | Record<HooksType, Configs>> =
-  {
-    // npx @tqlong1609/generate --generate redux
-    redux: {
+import { HooksConfig, ModulesConfig } from './utils/type';
+//
+export const configs: HooksConfig | ModulesConfig = {
+  // npx @tqlong1609/generate --generate hooks --type {type}
+  hooks: {
+    'copy-clipboard': {
+      typeFile: 'file',
+      repoUrl: '/packages/hooks/src/lib/useCopyToClipboard.ts',
+      localDir: './useCopyToClipboard.ts',
+    },
+    'copy-clipboard-component-image': {
+      typeFile: 'file',
+      repoUrl: '/packages/hooks/src/lib/useCopyComponentImageToClipboard.ts',
+      localDir: './useCopyComponentImageToClipboard.ts',
+      setupPackage: ['html2canvas'],
+    },
+    'session-storage-tabs': {
+      typeFile: 'file',
+      repoUrl: '/packages/hooks/src/lib/useSessionStorageTabs.ts',
+      localDir: './useSessionStorageTabs.ts',
+    },
+    'count-down': {
+      typeFile: 'file',
+      repoUrl: '/packages/hooks/src/lib/useCountDown.ts',
+      localDir: './useCountDown.ts',
+      relatedHooks: ['interval'],
+    },
+    interval: {
+      typeFile: 'file',
+      repoUrl: '/packages/hooks/src/lib/useInterval.ts',
+      localDir: './useInterval.ts',
+    },
+  },
+  // npx @tqlong1609/generate --generate modules --type {type}
+  modules: {
+    services: {
       typeFile: 'folder',
-      repoUrl: '/packages/react-redux/src',
-      localDir: './redux',
-      setupPackage: '@reduxjs/toolkit react-redux',
+      repoUrl: '/packages/app-demo/modules/services',
+      localDir: './services',
+      setupPackage: ['axios', 'axios-mock-adapter', 'zod'],
     },
-    // npx @tqlong1609/generate --generate hooks --type {type}
-    hooks: {
-      'copy-clipboard': {
-        typeFile: 'file',
-        repoUrl: '/packages/hooks/src/lib/useCopyToClipboard.ts',
-        localDir: './useCopyToClipboard.ts',
-      },
-      'copy-clipboard-component-image': {
-        typeFile: 'file',
-        repoUrl: '/packages/hooks/src/lib/useCopyComponentImageToClipboard.ts',
-        localDir: './useCopyComponentImageToClipboard.ts',
-        setupPackage: 'html2canvas',
-      },
-      'session-storage-tabs': {
-        typeFile: 'file',
-        repoUrl: '/packages/hooks/src/lib/useSessionStorageTabs.ts',
-        localDir: './useSessionStorageTabs.ts',
-      },
-      'count-down': {
-        typeFile: 'file',
-        repoUrl: '/packages/hooks/src/lib/useCountDown.ts',
-        localDir: './useCountDown.ts',
-        relatedHooks: ['interval'],
-      },
-      interval: {
-        typeFile: 'file',
-        repoUrl: '/packages/hooks/src/lib/useInterval.ts',
-        localDir: './useInterval.ts',
-      },
-    },
-  };
+  },
+};
