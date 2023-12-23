@@ -30,6 +30,11 @@ export const configs: HooksConfig | ModulesConfig = {
       repoUrl: '/packages/hooks/src/lib/useInterval.ts',
       localDir: './useInterval.ts',
     },
+    'query-params': {
+      typeFile: 'file',
+      repoUrl: '/packages/hooks/src/lib/useQueryParams.ts',
+      localDir: './useQueryParams.ts',
+    },
   },
   // npx @tqlong1609/generate --generate modules --type {type}
   modules: {

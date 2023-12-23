@@ -11,6 +11,7 @@ The Generate library supports generating javascript code to serve the common fea
 - [useSessionStorageTabs](#session-storage-tabs-hook)
 - [useCountDown](#count-down-hook)
 - [useInterval](#interval-hook)
+- [useQueryParams](#query-params-hook)
 
 💼 Modules:
 
@@ -219,6 +220,82 @@ function Home() {
     <>
       <div>{secondsRemaining}</div>
     </>
+  );
+}
+```
+
+#### Query Params Hook
+
+---
+
+🚀 Description:
+
+The useQueryParams hook used to interact with the query parameters of the current URL in a Next.js application.
+
+🗝️ Install:
+
+```
+npx @tqlong1609/generate --generate hooks --type query-params
+```
+
+🤖 Functions:
+
+The useQueryParams hook returns two functions:
+
+getQueryParam(queryName: string): This function takes a query parameter name as an argument and returns its value from the current URL's search parameters.
+
+setQueryParam(queryName: string, value: string): This function takes a query parameter name and a value as arguments. It updates the current URL's search parameters with the provided name-value pair. If the value is falsy, the query parameter is removed.
+
+🫰 Usage:
+
+You can use this hook in your Next.js components to easily get and set URL query parameters. This can be useful for implementing features like filters or search functionality where you want to reflect the current state in the URL.
+
+🚨Note: The setQueryParam function uses the router.replace method to update the URL without adding a new entry to the history stack. This means that using the browser's back button won't undo the changes made by setQueryParam.
+
+⚓ Example:
+
+```
+import {
+  useQueryParams
+} from './useQueryParams.ts';
+
+const TIME_COUNT = 1000;
+
+function Home() {
+  const [queryParams, setQueryParams] = useQueryParams();
+
+  const selected = queryParams('selected') || '';
+  const search = queryParams('search') || '';
+
+  const onSelect = (event: ChangeEvent<HTMLSelectElement>) => {
+    setQueryParams('selected', event.target.value);
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={search}
+        onChange={(evt) => {
+          setQueryParams('search', evt.target.value);
+        }}
+      />
+      <select value={selected} onChange={onSelect}>
+        <option value="">None</option>
+        {options.map((opt) => (
+          <option key={opt} value={opt}>
+            {opt}
+          </option>
+        ))}
+      </select>
+      <button
+        onClick={() => {
+          setQueryParams('search', search);
+        }}
+      >
+        Click
+      </button>
+    </div>
   );
 }
 ```

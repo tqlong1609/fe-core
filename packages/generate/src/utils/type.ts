@@ -5,7 +5,8 @@ export type HooksType =
   | 'copy-clipboard-component-image'
   | 'session-storage-tabs'
   | 'count-down'
-  | 'interval';
+  | 'interval'
+  | 'query-params';
 
 export type ModulesType = 'services';
 

@@ -6,6 +6,7 @@ const hooksType: HooksType[] = [
   'session-storage-tabs',
   'count-down',
   'interval',
+  'query-params',
 ];
 
 const modulesType: ModulesType[] = ['services'];
