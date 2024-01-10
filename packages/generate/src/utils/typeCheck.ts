@@ -1,4 +1,4 @@
-import { HooksType, ModulesType } from './type';
+import { FunctionsType, HooksType, ModulesType } from './type';
 
 const hooksType: HooksType[] = [
   'copy-clipboard',
@@ -11,6 +11,8 @@ const hooksType: HooksType[] = [
 
 const modulesType: ModulesType[] = ['services'];
 
+const functionsType: FunctionsType[] = ['location-state-singleton'];
+
 function isOfHooksType(value: string): value is HooksType {
   return hooksType.includes(value as HooksType);
 }
@@ -19,4 +21,8 @@ function isOfModulesType(value: string): value is ModulesType {
   return modulesType.includes(value as ModulesType);
 }
 
-export { isOfHooksType, isOfModulesType };
+function isOfFunctionsType(value: string): value is FunctionsType {
+  return functionsType.includes(value as FunctionsType);
+}
+
+export { isOfHooksType, isOfModulesType, isOfFunctionsType };

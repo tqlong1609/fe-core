@@ -1,6 +1,6 @@
-import { HooksType, ModulesType } from '../utils/type';
+import { GenerateType } from '../utils/type';
 
 export interface Generate {
-  type: HooksType | ModulesType;
+  type: GenerateType;
   handle(): void;
 }

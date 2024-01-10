@@ -1,5 +1,3 @@
-# Generate v0.0.11
-
 The Generate library supports generating javascript code to serve the common features in front end.
 
 ## 📃Table of Contents
@@ -16,6 +14,10 @@ The Generate library supports generating javascript code to serve the common fea
 💼 Modules:
 
 - [services](#services)
+
+🎲 Functions:
+
+- [location-state-singleton](#location-state-singleton)
 
 ### Hooks
 
@@ -415,6 +417,50 @@ authServices.login({
   console.error(err)
 })
 
+```
+
+### Functions
+
+#### Location State Singleton
+
+---
+
+🚀 Description:
+
+The LocationStateSingleton is a TypeScript class that provides a singleton instance to manage location state in your application. It is located in the LocationStateSingleton.ts file.
+
+🗝️ Install:
+
+```
+npx @tqlong1609/generate --generate functions --type location-state-singleton
+```
+
+How to use:
+
+- `getInstance()`: This static method returns the singleton instance of the LocationStateSingleton class. If the instance does not exist, it creates one.
+
+- `pushValue(key: string, value: any)`: This method adds a new key-value pair to the map.
+
+- `popValue(key: string)`: This method retrieves the value associated with the provided key and removes it from the map.
+
+- `getValue(key: string)`: This method retrieves the value associated with the provided key without removing it from the map.
+
+Example
+
+```
+import { LocationStateSingleton, KEY_I } from './LocationStateSingleton';
+
+// Get the singleton instance
+const locationState = LocationStateSingleton.getInstance();
+
+// Add a value to the map
+locationState.pushValue(KEY_I, 'value');
+
+// Get a value from the map
+const value = locationState.getValue(KEY_I);
+
+// Remove a value from the map and get its value
+const poppedValue = locationState.popValue(KEY_I);
 ```
 
 ## Author

@@ -1,6 +1,6 @@
-import { HooksConfig, ModulesConfig } from './utils/type';
+import { ConfigsType } from './utils/type';
 //
-export const configs: HooksConfig | ModulesConfig = {
+export const configs: ConfigsType = {
   // npx @tqlong1609/generate --generate hooks --type {type}
   hooks: {
     'copy-clipboard': {
@@ -43,6 +43,14 @@ export const configs: HooksConfig | ModulesConfig = {
       repoUrl: '/packages/app-demo/modules/services',
       localDir: './services',
       setupPackage: ['axios', 'axios-mock-adapter', 'zod'],
+    },
+  },
+  // npx @tqlong1609/generate --generate functions --type {type}
+  functions: {
+    'location-state-singleton': {
+      typeFile: 'folder',
+      repoUrl: '/packages/functions/src/lib/LocationStateSingleton',
+      localDir: './LocationStateSingleton',
     },
   },
 };

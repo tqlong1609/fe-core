@@ -1,9 +1,10 @@
 #! /usr/bin/env node
 import yargs from 'yargs';
 import { createGenerate } from '../generatorsFactory';
+import { ArgsValue } from '../utils/type';
 
 const { generate, type } = yargs.argv as unknown as {
-  generate: string;
+  generate: ArgsValue;
   type: string;
 };
 

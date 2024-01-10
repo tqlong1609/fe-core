@@ -1,4 +1,4 @@
-export type ArgsValue = 'redux' | 'hooks' | 'modules';
+export type ArgsValue = 'redux' | 'hooks' | 'modules' | 'functions';
 
 export type HooksType =
   | 'copy-clipboard'
@@ -10,14 +10,20 @@ export type HooksType =
 
 export type ModulesType = 'services';
 
+export type FunctionsType = 'location-state-singleton';
+
+export type GenerateType = HooksType | ModulesType | FunctionsType;
+
 /**
  * repoUrl: GitHub repository URL
  * localDir: Local directory where you want to save the downloaded folder
  * setupPackage: Notification for install packages (if has)
  */
 
+type ArgsType<T extends ArgsValue> = T;
+
 export type HooksConfig = Record<
-  'hooks',
+  ArgsType<'hooks'>,
   Record<
     HooksType,
     {
@@ -31,7 +37,7 @@ export type HooksConfig = Record<
 >;
 
 export type ModulesConfig = Record<
-  'modules',
+  ArgsType<'modules'>,
   Record<
     ModulesType,
     {
@@ -42,3 +48,18 @@ export type ModulesConfig = Record<
     }
   >
 >;
+
+export type FunctionsConfig = Record<
+  ArgsType<'functions'>,
+  Record<
+    FunctionsType,
+    {
+      typeFile: 'folder';
+      repoUrl: string;
+      localDir: string;
+      setupPackage?: string[];
+    }
+  >
+>;
+
+export type ConfigsType = HooksConfig | ModulesConfig | FunctionsConfig;

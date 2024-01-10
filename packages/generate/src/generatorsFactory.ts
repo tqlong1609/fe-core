@@ -1,8 +1,14 @@
+import { FunctionsGenerate } from './generators/functionsGenerate';
 import { HooksGenerate } from './generators/hooksGenerate';
 import { ModulesGenerate } from './generators/modulesGenerate';
-import { isOfHooksType, isOfModulesType } from './utils/typeCheck';
+import { ArgsValue } from './utils/type';
+import {
+  isOfFunctionsType,
+  isOfHooksType,
+  isOfModulesType,
+} from './utils/typeCheck';
 
-function createGenerate(generate?: string, type?: string) {
+function createGenerate(generate?: ArgsValue, type?: string) {
   if (!generate || !type) {
     throw new Error('Generate and type are required!');
   }
@@ -15,6 +21,11 @@ function createGenerate(generate?: string, type?: string) {
     case 'modules':
       if (isOfModulesType(type)) {
         return new ModulesGenerate(type);
+      }
+      break;
+    case 'functions':
+      if (isOfFunctionsType(type)) {
+        return new FunctionsGenerate(type);
       }
       break;
     default:
