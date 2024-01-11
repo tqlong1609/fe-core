@@ -10,7 +10,9 @@ export type HooksType =
 
 export type ModulesType = 'services';
 
-export type FunctionsType = 'location-state-singleton';
+export type FunctionsType =
+  | 'location-state-singleton'
+  | 'create-context-by-hook';
 
 export type GenerateType = HooksType | ModulesType | FunctionsType;
 

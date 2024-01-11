@@ -52,5 +52,10 @@ export const configs: ConfigsType = {
       repoUrl: '/packages/functions/src/lib/LocationStateSingleton',
       localDir: './LocationStateSingleton',
     },
+    'create-context-by-hook': {
+      typeFile: 'folder',
+      repoUrl: '/packages/functions/src/lib/CreateContextByHook',
+      localDir: './CreateContextByHook',
+    },
   },
 };

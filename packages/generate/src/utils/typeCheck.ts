@@ -11,7 +11,10 @@ const hooksType: HooksType[] = [
 
 const modulesType: ModulesType[] = ['services'];
 
-const functionsType: FunctionsType[] = ['location-state-singleton'];
+const functionsType: FunctionsType[] = [
+  'location-state-singleton',
+  'create-context-by-hook',
+];
 
 function isOfHooksType(value: string): value is HooksType {
   return hooksType.includes(value as HooksType);

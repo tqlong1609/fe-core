@@ -2,7 +2,12 @@
   "name": "@fe-core/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "clear-npx": "npx clear-npx-cache",
+    "start-build-generate": "nx build generate && cd dist/packages/generate && npx clear-npx-cache && start cd dist/packages/generate",
+    "start-publish-generate": "cd dist/packages/generate && npm version patch && npm publish --access public",
+    "publish-generate": "cd dist/packages/generate && npm publish --access public"
+  },
   "private": true,
   "dependencies": {
     "next": "13.4.1",

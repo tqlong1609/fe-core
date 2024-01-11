@@ -17,7 +17,8 @@ The Generate library supports generating javascript code to serve the common fea
 
 🎲 Functions:
 
-- [location-state-singleton](#location-state-singleton)
+- [location state singleton](#location-state-singleton)
+- [create context by hook](#create-context-by-hook)
 
 ### Hooks
 
@@ -461,6 +462,40 @@ const value = locationState.getValue(KEY_I);
 
 // Remove a value from the map and get its value
 const poppedValue = locationState.popValue(KEY_I);
+```
+
+#### Create Context By Hook
+
+---
+
+🚀 Description:
+
+The createContextByHook function is a utility function for creating a context using a custom hook in React
+
+🗝️ Install:
+
+```
+npx @tqlong1609/generate --generate functions --type create-context-by-hook
+```
+
+Example
+
+```
+import { useState } from 'react';
+import CreateContextByHook from '.';
+
+type ExampleContext = {};
+
+function useExample() {
+  const [data, setData] = useState<ExampleContext>({});
+
+  return { ...data, setData };
+}
+
+export const [ExampleProvider, useExampleContext] =
+  CreateContextByHook(useExample);
+
+const {} = useExampleContext();
 ```
 
 ## Author
