@@ -10,6 +10,7 @@ The Generate library supports generating javascript code to serve the common fea
 - [useCountDown](#count-down-hook)
 - [useInterval](#interval-hook)
 - [useQueryParams](#query-params-hook)
+- [useWindowSize](#window-size-hook)
 
 💼 Modules:
 
@@ -301,6 +302,40 @@ function Home() {
     </div>
   );
 }
+```
+
+#### Window Size Hook
+
+---
+
+🚀 Description:
+
+The useWindowSize hook is a custom React hook that provides the current window size.
+
+🗝️ Install:
+
+```
+npx @tqlong1609/generate --generate hooks --type window-size
+```
+
+⚓ Example:
+
+```
+import { useWindowSize } from 'packages/hooks/src/lib/useWindowSize';
+
+export function Home() {
+  const { height, width } = useWindowSize();
+  return (
+    <>
+      <div>
+        <p>Width: {width}</p>
+        <p>Height: {height}</p>
+      </div>
+    </>
+  );
+}
+
+export default Home;
 ```
 
 ### Modules
