@@ -19,6 +19,7 @@
       "@tqlong1609/generate": ["packages/generate/src/index.ts"],
       "@tqlong1609/generate-redux": ["packages/generate-redux/src/index.ts"],
       "@tqlong1609/hooks": ["packages/hooks/src/index.ts"],
+      "@tqlong1609/modules": ["packages/modules/src/index.ts"],
       "@tqlong1609/react-redux": ["packages/react-redux/src/index.ts"],
       "@tqlong1609/ui": ["packages/ui/src/index.ts"]
     }

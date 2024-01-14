@@ -6,7 +6,8 @@ export type HooksType =
   | 'session-storage-tabs'
   | 'count-down'
   | 'interval'
-  | 'query-params';
+  | 'query-params'
+  | 'window-size';
 
 export type ModulesType = 'services';
 

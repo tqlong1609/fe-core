@@ -1,0 +1,21 @@
+{
+  "run": {
+    "command": "nx serve app-demo",
+    "startTime": "2024-01-14T06:08:15.756Z",
+    "endTime": "2024-01-14T06:08:15.964Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "app-demo:serve:development",
+      "target": "serve",
+      "projectName": "app-demo",
+      "hash": "15945862092939344903",
+      "startTime": "2024-01-14T06:08:15.760Z",
+      "endTime": "2024-01-14T06:08:15.953Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    }
+  ]
+}

@@ -35,12 +35,17 @@ export const configs: ConfigsType = {
       repoUrl: '/packages/hooks/src/lib/useQueryParams.ts',
       localDir: './useQueryParams.ts',
     },
+    'window-size': {
+      typeFile: 'file',
+      repoUrl: '/packages/hooks/src/lib/useWindowSize.ts',
+      localDir: './useWindowSize.ts',
+    },
   },
   // npx @tqlong1609/generate --generate modules --type {type}
   modules: {
     services: {
       typeFile: 'folder',
-      repoUrl: '/packages/app-demo/modules/services',
+      repoUrl: '/packages/modules/src/lib/services',
       localDir: './services',
       setupPackage: ['axios', 'axios-mock-adapter', 'zod'],
     },
