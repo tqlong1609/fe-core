@@ -7,6 +7,7 @@ const hooksType: HooksType[] = [
   'count-down',
   'interval',
   'query-params',
+  'window-size',
 ];
 
 const modulesType: ModulesType[] = ['services'];
