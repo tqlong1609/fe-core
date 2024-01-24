@@ -595,6 +595,12 @@
         "name": "@fe-core/source",
         "$schema": "node_modules/nx/schemas/project-schema.json",
         "targets": {
+          "run:app-demo": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "run:app-demo"
+            }
+          },
           "clear-npx": {
             "executor": "nx:run-script",
             "options": {
@@ -607,10 +613,10 @@
               "script": "start-build-generate"
             }
           },
-          "start-publish-generate": {
+          "update-generate-version": {
             "executor": "nx:run-script",
             "options": {
-              "script": "start-publish-generate"
+              "script": "update-generate-version"
             }
           },
           "publish-generate": {
@@ -9212,6 +9218,15 @@
         "hash": "sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw=="
       }
     },
+    "npm:moment": {
+      "type": "npm",
+      "name": "npm:moment",
+      "data": {
+        "version": "2.30.1",
+        "packageName": "moment",
+        "hash": "sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how=="
+      }
+    },
     "npm:mv": {
       "type": "npm",
       "name": "npm:mv",
@@ -11462,17 +11477,12 @@
       },
       {
         "source": "app-demo",
-        "target": "npm:axios",
+        "target": "hooks",
         "type": "static"
       },
       {
         "source": "app-demo",
-        "target": "npm:axios-mock-adapter",
-        "type": "static"
-      },
-      {
-        "source": "app-demo",
-        "target": "npm:zod",
+        "target": "npm:moment",
         "type": "static"
       },
       {
@@ -11483,11 +11493,6 @@
       {
         "source": "app-demo",
         "target": "npm:next",
-        "type": "static"
-      },
-      {
-        "source": "app-demo",
-        "target": "hooks",
         "type": "static"
       }
     ],
@@ -11508,7 +11513,23 @@
         "type": "static"
       }
     ],
-    "modules": [],
+    "modules": [
+      {
+        "source": "modules",
+        "target": "npm:axios",
+        "type": "static"
+      },
+      {
+        "source": "modules",
+        "target": "npm:axios-mock-adapter",
+        "type": "static"
+      },
+      {
+        "source": "modules",
+        "target": "npm:zod",
+        "type": "static"
+      }
+    ],
     "hooks": [
       {
         "source": "hooks",
@@ -11532,6 +11553,11 @@
       {
         "source": "@fe-core/source",
         "target": "npm:@nx/jest",
+        "type": "static"
+      },
+      {
+        "source": "@fe-core/source",
+        "target": "npm:moment",
         "type": "static"
       },
       {

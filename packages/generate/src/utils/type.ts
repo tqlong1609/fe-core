@@ -4,12 +4,12 @@ export type HooksType =
   | 'copy-clipboard'
   | 'copy-clipboard-component-image'
   | 'session-storage-tabs'
-  | 'count-down'
   | 'interval'
   | 'query-params'
-  | 'window-size';
+  | 'window-size'
+  | 'visible-page';
 
-export type ModulesType = 'services';
+export type ModulesType = 'services' | 'timer';
 
 export type FunctionsType =
   | 'location-state-singleton'

@@ -19,12 +19,6 @@ export const configs: ConfigsType = {
       repoUrl: '/packages/hooks/src/lib/useSessionStorageTabs.ts',
       localDir: './useSessionStorageTabs.ts',
     },
-    'count-down': {
-      typeFile: 'file',
-      repoUrl: '/packages/hooks/src/lib/useCountDown.ts',
-      localDir: './useCountDown.ts',
-      relatedHooks: ['interval'],
-    },
     interval: {
       typeFile: 'file',
       repoUrl: '/packages/hooks/src/lib/useInterval.ts',
@@ -40,6 +34,11 @@ export const configs: ConfigsType = {
       repoUrl: '/packages/hooks/src/lib/useWindowSize.ts',
       localDir: './useWindowSize.ts',
     },
+    'visible-page': {
+      typeFile: 'file',
+      repoUrl: '/packages/hooks/src/lib/useVisiblePage.ts',
+      localDir: './useVisiblePage.ts',
+    },
   },
   // npx @tqlong1609/generate --generate modules --type {type}
   modules: {
@@ -48,6 +47,12 @@ export const configs: ConfigsType = {
       repoUrl: '/packages/modules/src/lib/services',
       localDir: './services',
       setupPackage: ['axios', 'axios-mock-adapter', 'zod'],
+    },
+    timer: {
+      typeFile: 'folder',
+      repoUrl: '/packages/app-demo/modules/timer',
+      localDir: './timer',
+      setupPackage: ['React', 'moment', '@tqlong1609/useVisiblePage'],
     },
   },
   // npx @tqlong1609/generate --generate functions --type {type}

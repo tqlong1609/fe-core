@@ -7,10 +7,10 @@ The Generate library supports generating javascript code to serve the common fea
 - [useCopyToClipboard](#copy-to-clipboard-hook)
 - [useCopyClipboardComponentImage](#copy-clipboard-component-image-hook)
 - [useSessionStorageTabs](#session-storage-tabs-hook)
-- [useCountDown](#count-down-hook)
 - [useInterval](#interval-hook)
 - [useQueryParams](#query-params-hook)
 - [useWindowSize](#window-size-hook)
+- [useVisiblePage](#visible-page-hook)
 
 💼 Modules:
 
@@ -151,44 +151,6 @@ function Home() {
 }
 ```
 
-#### Count Down Hook
-
----
-
-🚀 Description:
-
-The useCountdown hook is useful for creating a countdown timer. By specifying an endTime and various options such as the interval between ticks and callback functions for each tick and completion, the hook sets up an interval that updates the count and triggers the appropriate callbacks until the countdown reaches zero. The countdown value is returned, allowing you to easily incorporate and display the countdown in your components.
-
-🗝️ Install:
-
-```
-npx @tqlong1609/generate --generate hooks --type count-down
-```
-
-Example
-
-```
-import {
-  useCountDown
-} from './useCountDown.ts';
-
-function Home() {
-  const { minute, second, handleStart } = useCountDown();
-  return (
-    <>
-      <button
-        onClick={() => {
-          handleStart()
-        }}
-      >
-        Start
-      </button>
-      <div>{minute}:{second} mins</div>
-    </>
-  );
-}
-```
-
 #### Interval Hook
 
 ---
@@ -321,7 +283,7 @@ npx @tqlong1609/generate --generate hooks --type window-size
 ⚓ Example:
 
 ```
-import { useWindowSize } from 'packages/hooks/src/lib/useWindowSize';
+import { useWindowSize } from './useWindowSize';
 
 export function Home() {
   const { height, width } = useWindowSize();
@@ -336,6 +298,43 @@ export function Home() {
 }
 
 export default Home;
+```
+
+#### Visible Page Hook
+
+---
+
+🚀 Description:
+
+The `useVisiblePage` is a custom React hook that allows you to execute specific functions when the visibility of the page changes. This hook is particularly useful when you want to perform different actions based on whether the user is currently viewing the page or not.
+
+🗝️ Install:
+
+```
+npx @tqlong1609/generate --generate hooks --type visible-page
+```
+
+❓ How it works:
+
+`useVisiblePage` takes three parameters:
+
+1. `visibleFn`: A function that will be executed when the page becomes visible.
+2. `notVisibleFn`: A function that will be executed when the page becomes hidden.
+3. `deps`: An array of dependencies that the effect will re-run when they change, similar to the dependency array in useEffect.
+
+⚓ Example:
+
+```
+import { useVisiblePage } from './useVisiblePage';
+
+function MyComponent() {
+  useVisiblePage(
+    () => console.log('Page is visible'),
+    () => console.log('Page is hidden'),
+  );
+
+  // Rest of the component...
+}
 ```
 
 ### Modules
@@ -453,6 +452,70 @@ authServices.login({
   console.error(err)
 })
 
+```
+
+#### Timer
+
+---
+
+🚀 Description:
+
+The Timer module is a part of the application that provides functionality related to countdown timer.
+
+🗝️ Install:
+
+```
+npx @tqlong1609/generate --generate modules --type timer
+```
+
+🗝️ Dependencies:
+
+- React for building the user interface.
+- moment for handling dates and times.
+- @tqlong1609/useVisiblePage
+
+🤖 Usage:
+
+`useCountDown`
+
+- Is a custom React hook that provides functionality for a countdown timer.
+- It's written in TypeScript and uses Web Workers to manage the countdown process in a separate thread.
+
+```
+const {
+  timerWorker,
+  secondsRemaining,
+  minute,
+  second,
+  handleStart,
+  handleStop,
+  handleReset
+}
+= useCountDown(TIMER_SECOND);
+```
+
+`TimerBoxContainer`
+
+- Is a container component for the TimerBox component.
+- It manages the state and logic for a countdown timer.
+- The timer's initial time and maximum count.
+- Allowing it to persist across page refreshes.
+
+```
+import TimerBoxContainer from './timer';
+
+export function Home() {
+  const onTimeOff = () => {
+    console.log('Time off');
+  };
+  return (
+    <>
+      <TimerBoxContainer onTimeOff={onTimeOff} />
+    </>
+  );
+}
+
+export default Home;
 ```
 
 ### Functions

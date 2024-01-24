@@ -1,7 +1,13 @@
+'use client';
+import TimerBoxContainer from '../modules/timer/TimerBoxContainer';
+
 export function Home() {
+  const onTimeOff = () => {
+    console.log('Time off');
+  };
   return (
     <>
-      <div>value123</div>
+      <TimerBoxContainer onTimeOff={onTimeOff} />
     </>
   );
 }
