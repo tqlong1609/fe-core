@@ -15,6 +15,9 @@ The Generate library supports generating javascript code to serve the common fea
 💼 Modules:
 
 - [services](#services)
+- [timer](#timer)
+- [context](#context)
+- [filter](#filter)
 
 🎲 Functions:
 
@@ -516,6 +519,141 @@ export function Home() {
 }
 
 export default Home;
+```
+
+#### Context
+
+---
+
+🚀 Description:
+
+This file exports a utility function createCtx that creates a React context with a built-in state. This can be useful when you want to create a context that holds some state.
+
+🗝️ Install:
+
+```
+npx @tqlong1609/generate --generate modules --type context
+```
+
+🤖 Usage:
+
+`createCtx`
+
+- Creates a new context with built-in state. It takes a default value as a parameter and returns a tuple containing the context and a provider component for the context
+
+```
+import { createCtx } from '../context';
+import { status } from './options';
+import { FilterContextState } from './type';
+
+export const defaultFilterState: FilterContextState = {
+  status: status[0],
+  dateRange: null,
+  searchText: '',
+  pager: {
+    index: 0,
+  },
+};
+
+const [ctx, Provider] = createCtx<FilterContextState>(defaultFilterState);
+export const FilterContext = ctx;
+export const FilterProvider = Provider;
+```
+
+#### Filter
+
+---
+
+🚀 Description:
+
+Providing filtering functionality in your application
+
+🗝️ Install:
+
+```
+npx @tqlong1609/generate --generate modules --type filter
+```
+
+🤖 Usage:
+
+`withFilterContext`
+
+- This file exports a higher-order component (HOC) withFilterContext that wraps a given component with the FilterProvider context provider
+
+`useFilterQueryParams`
+
+- The useFilterQueryParams hook is a custom React hook that provides functionality for managing filter query parameters.
+
+- The hook returns an object with several functions that can be used to change specific query parameters or reset all query parameters.
+
+```
+import { useFilterQueryParams } from './useFilterQueryParams';
+
+function MyComponent() {
+  const {
+    onChangeDateRange,
+    onChangePagerIndex,
+    onChangeSearchText,
+    onChangeStatus,
+    onResetFilter,
+  } = useFilterQueryParams();
+
+  // Use the functions here to change query parameters based on user interaction
+}
+```
+
+`useFilterValues`
+
+- The useFilterValues hook returns the state value from the FilterContext. This state is likely an object that represents the current filter settings in your application. The exact shape of this object will depend on how you've defined your FilterContext
+
+```
+import React from 'react';
+import {
+  useFilterQueryParams,
+  withFilterContext,
+  useFilterValues,
+} from '../modules/filter';
+import _ from 'lodash';
+
+export function Home() {
+  const { searchText } = useFilterValues();
+  return (
+    <div>
+      <div>searchText {`${searchText}`} </div>
+      <SearchText initValue={searchText} />
+    </div>
+  );
+}
+
+function SearchText({ initValue }: { initValue: string }) {
+  const { onChangeSearchText } = useFilterQueryParams();
+  const [searchText, setSearchText] = React.useState('');
+
+  React.useEffect(() => {
+    if (initValue === searchText) return;
+    setSearchText(initValue);
+  }, [initValue]);
+
+  const onDebounceInput = React.useCallback(
+    _.debounce((newValue) => {
+      onChangeSearchText(newValue);
+    }, 500),
+    []
+  );
+
+  return (
+    <input
+      type="text"
+      value={searchText}
+      onChange={(e) => {
+        setSearchText(e.target.value);
+        onDebounceInput(e.target.value);
+      }}
+    />
+  );
+}
+
+export default withFilterContext(Home);
 ```
 
 ### Functions
