@@ -54,6 +54,17 @@ export const configs: ConfigsType = {
       localDir: './timer',
       setupPackage: ['React', 'moment', '@tqlong1609/useVisiblePage'],
     },
+    context: {
+      typeFile: 'folder',
+      repoUrl: '/packages/app-demo/modules/context',
+      localDir: './context',
+    },
+    filter: {
+      typeFile: 'folder',
+      repoUrl: '/packages/app-demo/modules/filter',
+      localDir: './filter',
+      setupPackage: ['React', '@tqlong1609/useQueryParams', 'moment'],
+    },
   },
   // npx @tqlong1609/generate --generate functions --type {type}
   functions: {

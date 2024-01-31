@@ -1,21 +1,11 @@
-import { FunctionsType, HooksType, ModulesType } from './type';
-
-const hooksType: HooksType[] = [
-  'copy-clipboard',
-  'copy-clipboard-component-image',
-  'session-storage-tabs',
-  'interval',
-  'query-params',
-  'window-size',
-  'visible-page',
-];
-
-const modulesType: ModulesType[] = ['services', 'timer'];
-
-const functionsType: FunctionsType[] = [
-  'location-state-singleton',
-  'create-context-by-hook',
-];
+import {
+  FunctionsType,
+  HooksType,
+  ModulesType,
+  functionsType,
+  hooksType,
+  modulesType,
+} from './type';
 
 function isOfHooksType(value: string): value is HooksType {
   return hooksType.includes(value as HooksType);

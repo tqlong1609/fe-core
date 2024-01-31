@@ -9,11 +9,33 @@ export type HooksType =
   | 'window-size'
   | 'visible-page';
 
-export type ModulesType = 'services' | 'timer';
+export const hooksType: HooksType[] = [
+  'copy-clipboard',
+  'copy-clipboard-component-image',
+  'session-storage-tabs',
+  'interval',
+  'query-params',
+  'window-size',
+  'visible-page',
+];
+
+export type ModulesType = 'services' | 'timer' | 'context' | 'filter';
+
+export const modulesType: ModulesType[] = [
+  'services',
+  'timer',
+  'context',
+  'filter',
+];
 
 export type FunctionsType =
   | 'location-state-singleton'
   | 'create-context-by-hook';
+
+export const functionsType: FunctionsType[] = [
+  'location-state-singleton',
+  'create-context-by-hook',
+];
 
 export type GenerateType = HooksType | ModulesType | FunctionsType;
 
