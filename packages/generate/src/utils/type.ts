@@ -7,7 +7,9 @@ export type HooksType =
   | 'interval'
   | 'query-params'
   | 'window-size'
-  | 'visible-page';
+  | 'visible-page'
+  | 'is-visible'
+  | 'is-mobile';
 
 export const hooksType: HooksType[] = [
   'copy-clipboard',
@@ -17,6 +19,8 @@ export const hooksType: HooksType[] = [
   'query-params',
   'window-size',
   'visible-page',
+  'is-visible',
+  'is-mobile',
 ];
 
 export type ModulesType = 'services' | 'timer' | 'context' | 'filter';
@@ -30,11 +34,13 @@ export const modulesType: ModulesType[] = [
 
 export type FunctionsType =
   | 'location-state-singleton'
-  | 'create-context-by-hook';
+  | 'create-context-by-hook'
+  | 'lazy-load-component';
 
 export const functionsType: FunctionsType[] = [
   'location-state-singleton',
   'create-context-by-hook',
+  'lazy-load-component',
 ];
 
 export type GenerateType = HooksType | ModulesType | FunctionsType;
@@ -70,6 +76,7 @@ export type ModulesConfig = Record<
       repoUrl: string;
       localDir: string;
       setupPackage?: string[];
+      relatedHooks?: HooksType[];
     }
   >
 >;
@@ -83,6 +90,7 @@ export type FunctionsConfig = Record<
       repoUrl: string;
       localDir: string;
       setupPackage?: string[];
+      relatedHooks?: HooksType[];
     }
   >
 >;

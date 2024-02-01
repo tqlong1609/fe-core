@@ -39,6 +39,17 @@ export const configs: ConfigsType = {
       repoUrl: '/packages/hooks/src/lib/useVisiblePage.ts',
       localDir: './useVisiblePage.ts',
     },
+    'is-visible': {
+      typeFile: 'file',
+      repoUrl: '/packages/hooks/src/lib/useIsVisible.ts',
+      localDir: './useIsVisible.ts',
+    },
+    'is-mobile': {
+      typeFile: 'file',
+      repoUrl: '/packages/hooks/src/lib/useIsMobile.ts',
+      localDir: './useIsMobile.ts',
+      relatedHooks: ['window-size'],
+    },
   },
   // npx @tqlong1609/generate --generate modules --type {type}
   modules: {
@@ -52,7 +63,8 @@ export const configs: ConfigsType = {
       typeFile: 'folder',
       repoUrl: '/packages/app-demo/modules/timer',
       localDir: './timer',
-      setupPackage: ['React', 'moment', '@tqlong1609/useVisiblePage'],
+      setupPackage: ['React', 'moment'],
+      relatedHooks: ['visible-page'],
     },
     context: {
       typeFile: 'folder',
@@ -63,7 +75,8 @@ export const configs: ConfigsType = {
       typeFile: 'folder',
       repoUrl: '/packages/app-demo/modules/filter',
       localDir: './filter',
-      setupPackage: ['React', '@tqlong1609/useQueryParams', 'moment'],
+      setupPackage: ['React', 'moment'],
+      relatedHooks: ['query-params'],
     },
   },
   // npx @tqlong1609/generate --generate functions --type {type}
@@ -77,6 +90,12 @@ export const configs: ConfigsType = {
       typeFile: 'folder',
       repoUrl: '/packages/functions/src/lib/CreateContextByHook',
       localDir: './CreateContextByHook',
+    },
+    'lazy-load-component': {
+      typeFile: 'folder',
+      repoUrl: '/packages/functions/src/lib/LazyLoadComponent',
+      localDir: './LazyLoadComponent',
+      relatedHooks: ['is-mobile', 'is-visible', 'window-size'],
     },
   },
 };

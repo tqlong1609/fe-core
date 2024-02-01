@@ -1,5 +1,6 @@
 import { configs } from '../config';
 import { GITHUB_REPO_URL } from '../constants';
+import { handleRelatedHooks } from '../handle';
 import { Generate } from '../interface/generate';
 import { downloadFolder } from '../utils';
 import { FunctionsConfig, FunctionsType } from '../utils/type';
@@ -12,9 +13,9 @@ export class FunctionsGenerate implements Generate {
   }
 
   handle() {
-    const { localDir, repoUrl, setupPackage } = (configs as FunctionsConfig)[
-      'functions'
-    ][this.type];
+    const { localDir, repoUrl, setupPackage, relatedHooks } = (
+      configs as FunctionsConfig
+    )['functions'][this.type];
 
     downloadFolder(GITHUB_REPO_URL + repoUrl, localDir)
       .then(() => {
@@ -26,5 +27,10 @@ export class FunctionsGenerate implements Generate {
       .catch((error) => {
         console.error('Function download fail: ', error);
       });
+
+    // Handle related hooks
+    if (relatedHooks && relatedHooks?.length > 0) {
+      handleRelatedHooks(relatedHooks, setupPackage);
+    }
   }
 }
