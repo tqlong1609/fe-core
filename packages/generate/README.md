@@ -11,6 +11,8 @@ The Generate library supports generating javascript code to serve the common fea
 - [useQueryParams](#query-params-hook)
 - [useWindowSize](#window-size-hook)
 - [useVisiblePage](#visible-page-hook)
+- [useIsVisible](#is-visible-hook)
+- [useIsMobile](#is-mobile-hook)
 
 💼 Modules:
 
@@ -23,6 +25,7 @@ The Generate library supports generating javascript code to serve the common fea
 
 - [location state singleton](#location-state-singleton)
 - [create context by hook](#create-context-by-hook)
+- [lazy load component](#lazy-load-component)
 
 ### Hooks
 
@@ -337,6 +340,68 @@ function MyComponent() {
   );
 
   // Rest of the component...
+}
+```
+
+#### Is Visible Hook
+
+---
+
+🚀 Description:
+
+The `useIsVisible` hook is a custom React hook that uses the Intersection Observer API to determine whether a given element is currently visible in the viewport. This value will be true if at least 25% of the element is visible, and false otherwise.
+
+🗝️ Install:
+
+```
+npx @tqlong1609/generate --generate hooks --type is-visible
+```
+
+⚓ Example:
+
+```
+import { useRef } from 'react';
+import { useIsVisible } from './useIsVisible';
+
+function MyComponent() {
+  const ref = useRef<HTMLDivElement>(null);
+  const isVisible = useIsVisible(ref);
+
+  return (
+    <div ref={ref}>
+      {isVisible ? 'I am visible!' : 'I am not visible.'}
+    </div>
+  );
+}
+```
+
+#### Is Mobile Hook
+
+---
+
+🚀 Description:
+
+The `useIsMobile` hook is a custom React hook that determines whether the viewport width is less than a certain breakpoint, indicating that the user is likely on a mobile device.
+
+🗝️ Install:
+
+```
+npx @tqlong1609/generate --generate hooks --type is-mobile
+```
+
+⚓ Example:
+
+```
+import { useIsMobile } from './useIsMobile';
+
+function MyComponent() {
+  const isMobile = useIsMobile();
+
+  return (
+    <div>
+      {isMobile ? 'You are likely on a mobile device.' : 'You are likely not on a mobile device.'}
+    </div>
+  );
 }
 ```
 
@@ -732,6 +797,34 @@ export const [ExampleProvider, useExampleContext] =
   CreateContextByHook(useExample);
 
 const {} = useExampleContext();
+```
+
+#### Lazy Load Component
+
+---
+
+🚀 Description:
+
+React component that lazily renders its children when they become visible in the viewport.
+
+🗝️ Install:
+
+```
+npx @tqlong1609/generate --generate functions --type lazy-load-component
+```
+
+Example
+
+```
+import { LazyLoadComponent } from './LazyLoadComponent';
+
+function MyComponent() {
+  return (
+    <LazyLoadComponent isMemo={true}>
+      <div>Content that will be lazily loaded</div>
+    </LazyLoadComponent>
+  );
+}
 ```
 
 ## Author
