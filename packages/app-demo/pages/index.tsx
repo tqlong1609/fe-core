@@ -1,50 +1,32 @@
 'use client';
+import { useIsMobile } from '@tqlong1609/hooks';
+import { LazyLoadComponent } from 'packages/functions/src/lib/LazyLoadComponent';
 import React from 'react';
-import {
-  useFilterQueryParams,
-  withFilterContext,
-  useFilterValues,
-} from '../modules/filter';
-import _ from 'lodash';
-export function Home() {
-  const { searchText } = useFilterValues();
+
+const index: React.FC = () => {
+  const isMobile = useIsMobile();
   return (
     <div>
-      {/* <div>status: {status.value}</div>
-      <div>dateRange {`${dateRange?.from} ${dateRange?.to}`} </div>
-      <div>pager {`${pager?.index}`} </div> */}
-      <div>searchText {`${searchText}`} </div>
-      <SearchText initValue={searchText} />
+      <div
+        style={{
+          width: 100,
+          height: 1500,
+          background: 'blue',
+        }}
+      />
+      <LazyLoadComponent>
+        <div
+          style={{
+            width: 100,
+            height: 100,
+            background: 'red',
+          }}
+        >
+          component
+        </div>
+      </LazyLoadComponent>
     </div>
   );
-}
+};
 
-function SearchText({ initValue }: { initValue: string }) {
-  const { onChangeSearchText } = useFilterQueryParams();
-  const [searchText, setSearchText] = React.useState('');
-
-  React.useEffect(() => {
-    if (initValue === searchText) return;
-    setSearchText(initValue);
-  }, [initValue]);
-
-  const onDebounceInput = React.useCallback(
-    _.debounce((newValue) => {
-      onChangeSearchText(newValue);
-    }, 500),
-    []
-  );
-
-  return (
-    <input
-      type="text"
-      value={searchText}
-      onChange={(e) => {
-        setSearchText(e.target.value);
-        onDebounceInput(e.target.value);
-      }}
-    />
-  );
-}
-
-export default withFilterContext(Home);
+export default index;
