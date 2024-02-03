@@ -20,6 +20,7 @@ The Generate library supports generating javascript code to serve the common fea
 - [timer](#timer)
 - [context](#context)
 - [filter](#filter)
+- [pagination](#pagination)
 
 🎲 Functions:
 
@@ -719,6 +720,58 @@ function SearchText({ initValue }: { initValue: string }) {
 }
 
 export default withFilterContext(Home);
+```
+
+#### Pagination
+
+---
+
+🚀 Description:
+
+The Pagination component uses a PaginationData component to manage the state of the current page and to calculate the range of pages to display. It provides buttons for navigating to the first, previous, next, and last pages, as well as buttons for each individual page in the current range.
+
+🗝️ Install:
+
+```
+npx @tqlong1609/generate --generate modules --type pagination
+```
+
+The Pagination component accepts the following props:
+
+- onChangePage: An optional function that is called when the current page changes. The new page number is passed as an argument.
+- currentPage: The current page number.
+- itemPerPage: The number of items per page.
+- totalPage: The total number of pages.
+
+The PaginationData component accepts the following props:
+
+- total: The total number of items.
+- limit: The number of items per page.
+- pageCount: The number of pages to display in the pagination interface.
+- currentPage: The current page number.
+- children: A function that renders the pagination interface. This function is passed an object with the current pagination state and a `getPageItemProps` function for generating the props for each page button.
+
+🤖 Usage:
+
+```
+import Pagination from './Pagination';
+
+function MyComponent() {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  return (
+    <Pagination
+      onChangePage={handlePageChange}
+      currentPage={currentPage}
+      itemPerPage={10}
+      totalPage={50}
+    />
+  );
+}
 ```
 
 ### Functions

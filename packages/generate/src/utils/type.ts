@@ -23,13 +23,19 @@ export const hooksType: HooksType[] = [
   'is-mobile',
 ];
 
-export type ModulesType = 'services' | 'timer' | 'context' | 'filter';
+export type ModulesType =
+  | 'services'
+  | 'timer'
+  | 'context'
+  | 'filter'
+  | 'pagination';
 
 export const modulesType: ModulesType[] = [
   'services',
   'timer',
   'context',
   'filter',
+  'pagination',
 ];
 
 export type FunctionsType =

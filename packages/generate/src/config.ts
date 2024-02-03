@@ -78,6 +78,11 @@ export const configs: ConfigsType = {
       setupPackage: ['React', 'moment'],
       relatedHooks: ['query-params'],
     },
+    pagination: {
+      typeFile: 'folder',
+      repoUrl: '/packages/app-demo/modules/pagination',
+      localDir: './pagination',
+    },
   },
   // npx @tqlong1609/generate --generate functions --type {type}
   functions: {
