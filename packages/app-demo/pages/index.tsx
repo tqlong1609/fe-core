@@ -1,30 +1,25 @@
 'use client';
-import { useIsMobile } from '@tqlong1609/hooks';
-import { LazyLoadComponent } from 'packages/functions/src/lib/LazyLoadComponent';
 import React from 'react';
+import Pagination from '../modules/pagination/Pagination';
+
+const PAGE_SIZE = 4;
+const totalRecords = 100;
 
 const index: React.FC = () => {
-  const isMobile = useIsMobile();
+  const [pager, setPager] = React.useState({ index: 0 });
+
+  const onChangePage = (page: number) => {
+    setPager({ index: page - 1 });
+  };
+
   return (
     <div>
-      <div
-        style={{
-          width: 100,
-          height: 1500,
-          background: 'blue',
-        }}
+      <Pagination
+        itemPerPage={PAGE_SIZE}
+        currentPage={pager.index + 1}
+        totalPage={totalRecords}
+        onChangePage={onChangePage}
       />
-      <LazyLoadComponent>
-        <div
-          style={{
-            width: 100,
-            height: 100,
-            background: 'red',
-          }}
-        >
-          component
-        </div>
-      </LazyLoadComponent>
     </div>
   );
 };
