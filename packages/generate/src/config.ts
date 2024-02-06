@@ -83,6 +83,11 @@ export const configs: ConfigsType = {
       repoUrl: '/packages/app-demo/modules/pagination',
       localDir: './pagination',
     },
+    'verify-code-phone': {
+      typeFile: 'folder',
+      repoUrl: '/packages/app-demo/modules/verify-code-phone',
+      localDir: './verify-code-phone',
+    },
   },
   // npx @tqlong1609/generate --generate functions --type {type}
   functions: {

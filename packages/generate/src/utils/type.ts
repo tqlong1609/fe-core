@@ -28,7 +28,8 @@ export type ModulesType =
   | 'timer'
   | 'context'
   | 'filter'
-  | 'pagination';
+  | 'pagination'
+  | 'verify-code-phone';
 
 export const modulesType: ModulesType[] = [
   'services',
@@ -36,6 +37,7 @@ export const modulesType: ModulesType[] = [
   'context',
   'filter',
   'pagination',
+  'verify-code-phone',
 ];
 
 export type FunctionsType =
