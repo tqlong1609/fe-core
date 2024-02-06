@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { FilterContext } from './FilterContext';
 import { useQueryParams } from '@tqlong1609/hooks';
-import { FilterQueryParams, Status } from './type';
+import { FilterContextState, FilterQueryParams, Status } from './type';
 import { status } from './options';
 import { getDateRangeFromQueryParams } from './utils';
 
@@ -12,7 +12,7 @@ export const useFilterContextEffect = () => {
 
   useEffect(() => {
     const setFilterStateOptionType = (
-      paramName: keyof FilterQueryParams,
+      paramName: keyof FilterContextState,
       stateArray: Status[]
     ) => {
       const paramValue = getQueryParam(paramName);
@@ -26,7 +26,7 @@ export const useFilterContextEffect = () => {
       }
     };
 
-    const setFilterStateStringType = (paramName: keyof FilterQueryParams) => {
+    const setFilterStateStringType = (paramName: keyof FilterContextState) => {
       const paramValue = getQueryParam(paramName);
       if (paramValue && typeof paramValue === 'string') {
         update((pre) => ({ ...pre, [paramName]: paramValue }));
@@ -36,7 +36,7 @@ export const useFilterContextEffect = () => {
     };
 
     const setFilterStateDateRangeType = (
-      paramName: keyof FilterQueryParams
+      paramName: keyof FilterContextState
     ) => {
       const paramValue = getQueryParam(paramName);
       if (paramValue && typeof paramValue === 'string') {
@@ -48,7 +48,7 @@ export const useFilterContextEffect = () => {
     };
 
     const setFilterStateIndexPagerType = (
-      paramName: keyof FilterQueryParams
+      paramName: keyof FilterContextState
     ) => {
       const paramValue = getQueryParam(paramName);
       if (paramValue && typeof paramValue === 'string') {
@@ -65,7 +65,7 @@ export const useFilterContextEffect = () => {
     setFilterStateOptionType('status', status);
     setFilterStateStringType('searchText');
     setFilterStateDateRangeType('dateRange');
-    setFilterStateIndexPagerType('index');
+    setFilterStateIndexPagerType('pager');
   }, [query]);
 };
 

@@ -15,13 +15,7 @@ export type FilterContextState = {
   };
 };
 
-export type FilterQueryParams = {
-  // must be string
-  dateRange: string;
-  index: string;
-  searchText: string;
-  status: string;
-};
+export type FilterQueryParams = Record<keyof FilterContextState, string>;
 
 export type FilterContextAction = {
   onChangeStatus: (status: Status) => void;
