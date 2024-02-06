@@ -21,6 +21,7 @@ The Generate library supports generating javascript code to serve the common fea
 - [context](#context)
 - [filter](#filter)
 - [pagination](#pagination)
+- [verify code phone](#verify-code-phone)
 
 🎲 Functions:
 
@@ -769,6 +770,60 @@ function MyComponent() {
       currentPage={currentPage}
       itemPerPage={10}
       totalPage={50}
+    />
+  );
+}
+```
+
+#### Verify Code Phone
+
+---
+
+🚀 Description:
+
+A React component that provides an interface for inputting a verification code received via phone.
+
+🗝️ Install:
+
+```
+npx @tqlong1609/generate --generate modules --type verify-code-phone
+```
+
+The VerifyCodePhone component accepts the following props:
+
+- autoFocus: Determines whether the first input field should be auto-focused.
+- inputProps: Additional props for the input fields.
+- length: The length of the verification code.
+- onChange: A function that is called when the value of an input field changes.
+- onCompleted: A function that is called when the verification code is fully entered.
+- placeholder: The placeholder for the input fields.
+- type: The type of the verification code. It can be 'alphanumeric', 'number', or 'string'.
+- value: The default value of the verification code.
+- isLocked: Determines whether the input fields should be disabled.
+
+🤖 Usage:
+
+```
+import { VerifyCodePhone } from './VerifyCodePhone';
+
+function MyComponent() {
+  const handleOnChange = (data: string) => {
+    console.log('Changed:', data);
+  };
+
+  const handleOnCompleted = (data: string) => {
+    console.log('Completed:', data);
+  };
+
+  return (
+    <VerifyCodePhone
+      autoFocus={true}
+      length={6}
+      onChange={handleOnChange}
+      onCompleted={handleOnCompleted}
+      placeholder="·"
+      type="number"
+      isLocked={false}
     />
   );
 }
