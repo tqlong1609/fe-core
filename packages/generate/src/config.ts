@@ -107,5 +107,10 @@ export const configs: ConfigsType = {
       localDir: './LazyLoadComponent',
       relatedHooks: ['is-mobile', 'is-visible', 'window-size'],
     },
+    'log-error': {
+      typeFile: 'folder',
+      repoUrl: '/packages/functions/src/lib/LogError',
+      localDir: './LogError',
+    },
   },
 };
