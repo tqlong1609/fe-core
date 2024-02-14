@@ -1,13 +1,21 @@
 'use client';
+import { withLogError } from '@tqlong1609/functions';
 import React from 'react';
-import { VerifyCodePhone } from '../modules/verify-code-phone';
 
 const index: React.FC = () => {
   return (
     <div>
-      <VerifyCodePhone />
+      <button
+        onClick={() => {
+          throw new Error('Test error');
+        }}
+      >
+        click
+      </button>
     </div>
   );
 };
 
-export default index;
+export default withLogError(index)((message) => {
+  console.log('Log Error:', message);
+});
