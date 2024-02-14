@@ -28,6 +28,7 @@ The Generate library supports generating javascript code to serve the common fea
 - [location state singleton](#location-state-singleton)
 - [create context by hook](#create-context-by-hook)
 - [lazy load component](#lazy-load-component)
+- [log error](#log-error)
 
 ### Hooks
 
@@ -933,6 +934,45 @@ function MyComponent() {
     </LazyLoadComponent>
   );
 }
+```
+
+#### Log Error
+
+---
+
+🚀 Description:
+
+React Higher Order Component that used for logging error and unhandled rejection events.
+
+🗝️ Install:
+
+```
+npx @tqlong1609/generate --generate functions --type log-error
+```
+
+Example
+
+```
+import { withLogError } from '@tqlong1609/functions';
+import React from 'react';
+
+const index: React.FC = () => {
+  return (
+    <div>
+      <button
+        onClick={() => {
+          throw new Error('Test error');
+        }}
+      >
+        click
+      </button>
+    </div>
+  );
+};
+
+export default withLogError(index)((message) => {
+  console.log('Log Error:', message);
+});
 ```
 
 ## Author
