@@ -112,5 +112,10 @@ export const configs: ConfigsType = {
       repoUrl: '/packages/functions/src/lib/LogError',
       localDir: './LogError',
     },
+    cookies: {
+      typeFile: 'folder',
+      repoUrl: '/packages/functions/src/lib/Cookies',
+      localDir: './Cookies',
+    },
   },
 };

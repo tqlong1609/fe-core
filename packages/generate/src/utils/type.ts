@@ -44,13 +44,15 @@ export type FunctionsType =
   | 'location-state-singleton'
   | 'create-context-by-hook'
   | 'lazy-load-component'
-  | 'log-error';
+  | 'log-error'
+  | 'cookies';
 
 export const functionsType: FunctionsType[] = [
   'location-state-singleton',
   'create-context-by-hook',
   'lazy-load-component',
   'log-error',
+  'cookies',
 ];
 
 export type GenerateType = HooksType | ModulesType | FunctionsType;
