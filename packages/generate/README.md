@@ -29,6 +29,7 @@ The Generate library supports generating javascript code to serve the common fea
 - [create context by hook](#create-context-by-hook)
 - [lazy load component](#lazy-load-component)
 - [log error](#log-error)
+- [cookies](#cookies)
 
 ### Hooks
 
@@ -973,6 +974,36 @@ const index: React.FC = () => {
 export default withLogError(index)((message) => {
   console.log('Log Error:', message);
 });
+```
+
+#### Cookies
+
+---
+
+🚀 Description:
+
+These utilities are used for managing cookies in a web application. They provide functions to get, set, and delete cookies.
+
+🗝️ Install:
+
+```
+npx @tqlong1609/generate --generate functions --type cookies
+```
+
+Example
+
+```
+import { getCookie, setCookie, deleteCookie } from './index';
+
+// Set a cookie that expires in 9 hours
+setCookie('myCookie', 'myValue', 9 * 60 * 60 * 1000);
+
+// Get the value of the cookie
+const myCookieValue = getCookie('myCookie');
+console.log(myCookieValue); // 'myValue'
+
+// Delete the cookie
+deleteCookie('myCookie');
 ```
 
 ## Author
