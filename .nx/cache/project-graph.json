@@ -11566,11 +11566,6 @@
     "app-demo": [
       {
         "source": "app-demo",
-        "target": "functions",
-        "type": "static"
-      },
-      {
-        "source": "app-demo",
         "target": "npm:react",
         "type": "static"
       },
@@ -11592,6 +11587,11 @@
       {
         "source": "app-demo",
         "target": "npm:next",
+        "type": "static"
+      },
+      {
+        "source": "app-demo",
+        "target": "functions",
         "type": "static"
       }
     ],
