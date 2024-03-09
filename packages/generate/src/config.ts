@@ -117,5 +117,11 @@ export const configs: ConfigsType = {
       repoUrl: '/packages/functions/src/lib/Cookies',
       localDir: './Cookies',
     },
+    'sheets-api': {
+      typeFile: 'folder',
+      repoUrl: '/packages/functions/src/lib/SheetsApi',
+      localDir: './SheetsApi',
+      setupPackage: ['googleapis'],
+    },
   },
 };

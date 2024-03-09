@@ -45,7 +45,8 @@ export type FunctionsType =
   | 'create-context-by-hook'
   | 'lazy-load-component'
   | 'log-error'
-  | 'cookies';
+  | 'cookies'
+  | 'sheets-api';
 
 export const functionsType: FunctionsType[] = [
   'location-state-singleton',
@@ -53,6 +54,7 @@ export const functionsType: FunctionsType[] = [
   'lazy-load-component',
   'log-error',
   'cookies',
+  'sheets-api',
 ];
 
 export type GenerateType = HooksType | ModulesType | FunctionsType;

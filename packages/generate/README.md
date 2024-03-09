@@ -30,6 +30,7 @@ The Generate library supports generating javascript code to serve the common fea
 - [lazy load component](#lazy-load-component)
 - [log error](#log-error)
 - [cookies](#cookies)
+- [sheets api](#sheets-api)
 
 ### Hooks
 
@@ -1004,6 +1005,194 @@ console.log(myCookieValue); // 'myValue'
 
 // Delete the cookie
 deleteCookie('myCookie');
+```
+
+🗝️ Install:
+
+```
+npx @tqlong1609/generate --generate functions --type cookies
+```
+
+#### Sheets Api
+
+---
+
+🚀 Description:
+
+This TypeScript class provides methods to interact with Google Sheets using the Google Sheets API v4.
+
+📄 Environment variables
+
+- `GOOGLE_SERVICE_ACCOUNT_EMAIL`: The email address of your Google service account.
+- `GOOGLE_PRIVATE_KEY`: The private key of your Google service account. Note that newline characters in this key should be represented as `\n`.
+- `GOOGLE_SHEET_ID`: The ID of the Google Sheet you want to interact with.
+
+🎲 Methods
+
+- `constructor(sheetName: string, colChar: string, rowCount: number)`: Initializes a new instance of the `SheetsService` class.
+- `getInstance(isReadonly = false)`: Returns an instance of the Google Sheets API client.
+- `getSheets()`: Fetches the values from the specified range of the Google Sheet.
+- `updateSheets(data: string[][], isClearBeforeUpdate = false)`: Updates the values in the specified range of the Google Sheet.
+- `clearSheets()`: Clears the values in the specified range of the Google Sheet.
+- `removeSheets(numberOfRows: number)`: Removes the specified row from the Google Sheet.
+- `appendSheets(data: string[])`: Appends the specified data to the Google Sheet.
+
+Example
+
+```
+import { ArticlesSheets } from '@tqlong1609/functions';
+
+function transformArray(input: any[][]): any[] {
+  const [header, ...data] = input;
+  return data.map((row) => {
+    let obj: { [key: string]: any } = {};
+    row.forEach((item, index) => {
+      obj[header[index]] = item;
+    });
+    return obj;
+  });
+}
+
+export async function getServerSideProps() {
+  const response = (await ArticlesSheets.getSheets()) as any;
+  const formattedData = transformArray(response.data.values as any[]);
+  return {
+    props: {
+      data: formattedData,
+    },
+  };
+}
+
+type ArticlesType = {
+  ID: string;
+  Title: string;
+  Author: string;
+  Date: string;
+  Content?: string;
+};
+
+const index: React.FC<{
+  data: ArticlesType[];
+}> = ({ data: initData }) => {
+  const [data, setData] = useState<ArticlesType[]>(initData);
+
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    try {
+      const formData = new FormData(event.currentTarget);
+      const Title = formData.get('title');
+      const Author = formData.get('author');
+      const Date = formData.get('date');
+      const Content = formData.get('content');
+
+      const responseFetch = await fetch('/api/submit', {
+        method: 'POST',
+        body: JSON.stringify({
+          Title,
+          Author,
+          Date,
+          Content,
+        }),
+      });
+      const { response } = (await responseFetch.json()) as {
+        status: string;
+        response: ArticlesType;
+      };
+      setData([
+        ...data,
+        {
+          ID: response.ID,
+          Title: response.Title,
+          Author: response.Author,
+          Date: response.Date,
+          Content: response.Content,
+        },
+      ]);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  const onDelete = async (id: string) => {
+    try {
+      const numberOfRows = data.findIndex((item) => item.ID === id) + 1;
+      if (!numberOfRows) return;
+
+      await fetch('/api/removeSheets', {
+        method: 'POST',
+        body: JSON.stringify({
+          numberOfRows: numberOfRows + 1,
+        }),
+      });
+      const newData = data.filter((item) => item.ID !== id);
+      setData(newData);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+
+  return (
+    <div>
+      <table>
+        <thead>
+          <tr>
+            {Object.keys(data[0]).map((key) => (
+              <th key={key}>{key}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((item: ArticlesType) => (
+            <tr key={item.ID}>
+              {Object.keys(item).map((key) => (
+                <td key={key}>
+                  <p>{item[key as keyof ArticlesType]}</p>
+                </td>
+              ))}
+              <td>
+                <button onClick={() => onDelete(item.ID)}>delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <form onSubmit={onSubmit}>
+        <label htmlFor="title">Title:</label>
+        <input type="text" id="title" name="title" />
+        <label htmlFor="author">Author:</label>
+        <input type="text" id="author" name="author" />
+        <label htmlFor="date">Date:</label>
+        <input type="date" id="date" name="date" />
+        <label htmlFor="content">Content:</label>
+        <textarea id="content" name="content"></textarea>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  );
+};
+```
+
+/api/removeSheets
+
+```
+import { ArticlesSheets } from '@tqlong1609/functions';
+import { NextApiRequest, NextApiResponse } from 'next';
+
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  try {
+    const data = JSON.parse(req.body) as {
+      numberOfRows: number;
+    };
+    await ArticlesSheets.removeSheets(data.numberOfRows);
+    res.status(200).json({
+      message: 'Remove success',
+    });
+  } catch (err) {
+    res.status(500).json({ error: err });
+  }
+};
+
+export default handler;
 ```
 
 ## Author
