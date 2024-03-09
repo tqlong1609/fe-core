@@ -1,21 +1,21 @@
 {
   "run": {
-    "command": "nx build generate",
-    "startTime": "2024-01-14T07:34:29.869Z",
-    "endTime": "2024-01-14T07:34:32.134Z",
+    "command": "nx run app-demo:serve --port 4200",
+    "startTime": "2024-03-08T14:20:29.782Z",
+    "endTime": "2024-03-08T14:33:59.958Z",
     "inner": false
   },
   "tasks": [
     {
-      "taskId": "generate:build",
-      "target": "build",
-      "projectName": "generate",
-      "hash": "18162813533263046007",
-      "startTime": "2024-01-14T07:34:29.875Z",
-      "endTime": "2024-01-14T07:34:32.133Z",
+      "taskId": "app-demo:serve:development",
+      "target": "serve",
+      "projectName": "app-demo",
+      "hash": "10346471867912540192",
+      "startTime": "2024-03-08T14:20:29.786Z",
+      "endTime": "2024-03-08T14:33:59.958Z",
       "params": "",
       "cacheStatus": "cache-miss",
-      "status": 0
+      "status": 1
     }
   ]
 }

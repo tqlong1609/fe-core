@@ -28,7 +28,8 @@
     "next-env.d.ts",
     "../hooks/src/lib/*.ts",
     "../functions/src/lib/LazyLoadComponent/index.ts",
-    "../functions/src/lib/LazyLoadComponent/LazyLoadComponent.tsx"
+    "../functions/src/lib/LazyLoadComponent/LazyLoadComponent.tsx",
+    "../functions/src/lib/SheetsApi/SheetsService.ts"
   ],
   "exclude": [
     "node_modules",

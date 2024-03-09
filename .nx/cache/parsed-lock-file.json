@@ -1432,6 +1432,15 @@
         "hash": "sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg=="
       }
     },
+    "npm:uuid@9.0.1": {
+      "type": "npm",
+      "name": "npm:uuid@9.0.1",
+      "data": {
+        "version": "9.0.1",
+        "packageName": "uuid",
+        "hash": "sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA=="
+      }
+    },
     "npm:uuid": {
       "type": "npm",
       "name": "npm:uuid",
@@ -3196,15 +3205,6 @@
         "hash": "sha512-wyUkmaaSZEzFZivD8F2ftSyAfk6L+DfFliVj/mYdOXbVjRcS87fQJLTnhk6dRZPuJjI+9g6RZJO4PNCngUrmyw=="
       }
     },
-    "npm:@types/react-transition-group": {
-      "type": "npm",
-      "name": "npm:@types/react-transition-group",
-      "data": {
-        "version": "4.4.7",
-        "packageName": "@types/react-transition-group",
-        "hash": "sha512-ICCyBl5mvyqYp8Qeq9B5G/fyBSRC0zx3XM3sCC6KkcMsNeAHqXBKkmat4GqdJET5jtYUpZXrxI5flve5qhi2Eg=="
-      }
-    },
     "npm:@types/scheduler": {
       "type": "npm",
       "name": "npm:@types/scheduler",
@@ -3826,6 +3826,15 @@
         "hash": "sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ=="
       }
     },
+    "npm:agent-base@7.1.0": {
+      "type": "npm",
+      "name": "npm:agent-base@7.1.0",
+      "data": {
+        "version": "7.1.0",
+        "packageName": "agent-base",
+        "hash": "sha512-o/zjMZRhJxny7OyEF+Op8X+efiELC7k7yOjMzgfzVqOzXqkBkWI79YoTdOtsuWd5BWhAGAuOY/Xa6xpiaWXiNg=="
+      }
+    },
     "npm:aggregate-error": {
       "type": "npm",
       "name": "npm:aggregate-error",
@@ -4346,6 +4355,15 @@
         "version": "5.2.2",
         "packageName": "big.js",
         "hash": "sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ=="
+      }
+    },
+    "npm:bignumber.js": {
+      "type": "npm",
+      "name": "npm:bignumber.js",
+      "data": {
+        "version": "9.1.2",
+        "packageName": "bignumber.js",
+        "hash": "sha512-2/mKyZH9K85bzOEfhXDBFZTGd1CTs+5IHpeFQo9luiBG7hghdC851Pj2WAhb6E3R6b9tZj/XKhbg4fum+Kepug=="
       }
     },
     "npm:binary-extensions": {
@@ -5635,15 +5653,6 @@
         "hash": "sha512-X7BJ2yElsnOJ30pZF4uIIDfBEVgF4XEBxL9Bxhy6dnrm5hkzqmsWHGTiHqRiITNhMyFLyAiWndIJP7Z1NTteDg=="
       }
     },
-    "npm:dom-helpers": {
-      "type": "npm",
-      "name": "npm:dom-helpers",
-      "data": {
-        "version": "5.2.1",
-        "packageName": "dom-helpers",
-        "hash": "sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA=="
-      }
-    },
     "npm:dom-serializer": {
       "type": "npm",
       "name": "npm:dom-serializer",
@@ -6715,6 +6724,42 @@
         "hash": "sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ=="
       }
     },
+    "npm:gaxios": {
+      "type": "npm",
+      "name": "npm:gaxios",
+      "data": {
+        "version": "6.3.0",
+        "packageName": "gaxios",
+        "hash": "sha512-p+ggrQw3fBwH2F5N/PAI4k/G/y1art5OxKpb2J2chwNNHM4hHuAOtivjPuirMF4KNKwTTUal/lPfL2+7h2mEcg=="
+      }
+    },
+    "npm:https-proxy-agent@7.0.4": {
+      "type": "npm",
+      "name": "npm:https-proxy-agent@7.0.4",
+      "data": {
+        "version": "7.0.4",
+        "packageName": "https-proxy-agent",
+        "hash": "sha512-wlwpilI7YdjSkWaQ/7omYBMTliDcmCN8OLihO6I9B86g06lMyAoqgoDpV0XqoaPOKj+0DIdAvnsWfyAAhmimcg=="
+      }
+    },
+    "npm:https-proxy-agent": {
+      "type": "npm",
+      "name": "npm:https-proxy-agent",
+      "data": {
+        "version": "5.0.1",
+        "packageName": "https-proxy-agent",
+        "hash": "sha512-dFcAjpTQFgoLMzC2VwU+C/CbS7uRL0lWmxDITmqm7C+7F0Odmj6s9l6alZc6AELXhrnggM2CeWSXHGOdX2YtwA=="
+      }
+    },
+    "npm:gcp-metadata": {
+      "type": "npm",
+      "name": "npm:gcp-metadata",
+      "data": {
+        "version": "6.1.0",
+        "packageName": "gcp-metadata",
+        "hash": "sha512-Jh/AIwwgaxan+7ZUUmRLCjtchyDiqh4KjBJ5tW3plBZb5iL/BPcso8A5DlzeD9qlw0duCamnNdpFjxwaT0KyKg=="
+      }
+    },
     "npm:gensync": {
       "type": "npm",
       "name": "npm:gensync",
@@ -6814,6 +6859,69 @@
         "hash": "sha512-sFdI5LyBiNTHjRd7cGPWapiHWMOXKyuBNX/cWJ3NfzrZQVa8GI/8cofCl74AOVqq9W5kNmguTIzJ/1s2gyI9wA=="
       }
     },
+    "npm:google-auth-library": {
+      "type": "npm",
+      "name": "npm:google-auth-library",
+      "data": {
+        "version": "9.6.3",
+        "packageName": "google-auth-library",
+        "hash": "sha512-4CacM29MLC2eT9Cey5GDVK4Q8t+MMp8+OEdOaqD9MG6b0dOyLORaaeJMPQ7EESVgm/+z5EKYyFLxgzBJlJgyHQ=="
+      }
+    },
+    "npm:jwa@2.0.0": {
+      "type": "npm",
+      "name": "npm:jwa@2.0.0",
+      "data": {
+        "version": "2.0.0",
+        "packageName": "jwa",
+        "hash": "sha512-jrZ2Qx916EA+fq9cEAeCROWPTfCwi1IVHqT2tapuqLEVVDKFDENFw1oL+MwrTvH6msKxsd1YTDVw6uKEcsrLEA=="
+      }
+    },
+    "npm:jwa": {
+      "type": "npm",
+      "name": "npm:jwa",
+      "data": {
+        "version": "1.4.1",
+        "packageName": "jwa",
+        "hash": "sha512-qiLX/xhEEFKUAJ6FiBMbes3w9ATzyk5W7Hvzpa/SLYdxNtng+gcurvrI7TbACjIXlsJyr05/S1oUhZrc63evQA=="
+      }
+    },
+    "npm:jws@4.0.0": {
+      "type": "npm",
+      "name": "npm:jws@4.0.0",
+      "data": {
+        "version": "4.0.0",
+        "packageName": "jws",
+        "hash": "sha512-KDncfTmOZoOMTFG4mBlG0qUIOlc03fmzH+ru6RgYVZhPkyiy/92Owlt/8UEN+a4TXR1FQetfIpJE8ApdvdVxTg=="
+      }
+    },
+    "npm:jws": {
+      "type": "npm",
+      "name": "npm:jws",
+      "data": {
+        "version": "3.2.2",
+        "packageName": "jws",
+        "hash": "sha512-YHlZCB6lMTllWDtSPHz/ZXTsi8S00usEV6v1tjq8tOUZzw7DpSDWVXjXDre6ed1w/pd495ODpHZYSdkRTsa0HA=="
+      }
+    },
+    "npm:googleapis": {
+      "type": "npm",
+      "name": "npm:googleapis",
+      "data": {
+        "version": "133.0.0",
+        "packageName": "googleapis",
+        "hash": "sha512-6xyc49j+x7N4smawJs/q1i7mbSkt6SYUWWd9RbsmmDW7gRv+mhwZ4xT+XkPihZcNyo/diF//543WZq4szdS74w=="
+      }
+    },
+    "npm:googleapis-common": {
+      "type": "npm",
+      "name": "npm:googleapis-common",
+      "data": {
+        "version": "7.0.1",
+        "packageName": "googleapis-common",
+        "hash": "sha512-mgt5zsd7zj5t5QXvDanjWguMdHAcJmmDrF9RkInCecNsyV7S7YtGqm5v2IWONNID88osb7zmx5FtrAP12JfD0w=="
+      }
+    },
     "npm:gopd": {
       "type": "npm",
       "name": "npm:gopd",
@@ -6839,6 +6947,15 @@
         "version": "1.4.0",
         "packageName": "graphemer",
         "hash": "sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag=="
+      }
+    },
+    "npm:gtoken": {
+      "type": "npm",
+      "name": "npm:gtoken",
+      "data": {
+        "version": "7.1.0",
+        "packageName": "gtoken",
+        "hash": "sha512-pCcEwRi+TKpMlxAQObHDQ56KawURgyAf6jtIY046fJ5tIv3zDe/LEIubckAO8fj6JnAxLdmWkUfNyulQ2iKdEw=="
       }
     },
     "npm:handlebars": {
@@ -7046,15 +7163,6 @@
         "version": "2.2.0",
         "packageName": "http-status-codes",
         "hash": "sha512-feERVo9iWxvnejp3SEfm/+oNG517npqL2/PIA8ORjyOZjGC7TwCRQsZylciLS64i6pJ0wRYz3rkXLRwbtFa8Ng=="
-      }
-    },
-    "npm:https-proxy-agent": {
-      "type": "npm",
-      "name": "npm:https-proxy-agent",
-      "data": {
-        "version": "5.0.1",
-        "packageName": "https-proxy-agent",
-        "hash": "sha512-dFcAjpTQFgoLMzC2VwU+C/CbS7uRL0lWmxDITmqm7C+7F0Odmj6s9l6alZc6AELXhrnggM2CeWSXHGOdX2YtwA=="
       }
     },
     "npm:iconv-lite": {
@@ -8029,6 +8137,15 @@
         "hash": "sha512-uZz5UnB7u4T9LvwmFqXii7pZSouaRPorGs5who1Ip7VO0wxanFvBL7GkM6dTHlgX+jhBApRetaWpnDabOeTcnA=="
       }
     },
+    "npm:json-bigint": {
+      "type": "npm",
+      "name": "npm:json-bigint",
+      "data": {
+        "version": "1.0.0",
+        "packageName": "json-bigint",
+        "hash": "sha512-SiPv/8VpZuWbvLSMtTDU8hEfrZWg/mH/nV/b4o0CYbSxu1UIQPLdwKOCIyLQX+VIPO5vrLX3i8qtqFyhdPSUSQ=="
+      }
+    },
     "npm:json-buffer": {
       "type": "npm",
       "name": "npm:json-buffer",
@@ -8126,24 +8243,6 @@
         "version": "3.3.4",
         "packageName": "jsx-ast-utils",
         "hash": "sha512-fX2TVdCViod6HwKEtSWGHs57oFhVfCMwieb9PuRDgjDPh5XeqJiHFFFJCHxU5cnTc3Bu/GRL+kPiFmw8XWOfKw=="
-      }
-    },
-    "npm:jwa": {
-      "type": "npm",
-      "name": "npm:jwa",
-      "data": {
-        "version": "1.4.1",
-        "packageName": "jwa",
-        "hash": "sha512-qiLX/xhEEFKUAJ6FiBMbes3w9ATzyk5W7Hvzpa/SLYdxNtng+gcurvrI7TbACjIXlsJyr05/S1oUhZrc63evQA=="
-      }
-    },
-    "npm:jws": {
-      "type": "npm",
-      "name": "npm:jws",
-      "data": {
-        "version": "3.2.2",
-        "packageName": "jws",
-        "hash": "sha512-YHlZCB6lMTllWDtSPHz/ZXTsi8S00usEV6v1tjq8tOUZzw7DpSDWVXjXDre6ed1w/pd495ODpHZYSdkRTsa0HA=="
       }
     },
     "npm:keygrip": {
@@ -8699,9 +8798,9 @@
       "type": "npm",
       "name": "npm:node-fetch",
       "data": {
-        "version": "2.6.7",
+        "version": "2.7.0",
         "packageName": "node-fetch",
-        "hash": "sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ=="
+        "hash": "sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A=="
       }
     },
     "npm:node-gyp-build": {
@@ -9386,15 +9485,6 @@
         "version": "18.2.0",
         "packageName": "react-dom",
         "hash": "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
-      }
-    },
-    "npm:react-transition-group": {
-      "type": "npm",
-      "name": "npm:react-transition-group",
-      "data": {
-        "version": "4.4.5",
-        "packageName": "react-transition-group",
-        "hash": "sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g=="
       }
     },
     "npm:readdirp": {
@@ -10421,6 +10511,15 @@
         "version": "1.5.10",
         "packageName": "url-parse",
         "hash": "sha512-WypcfiRhfeUP9vvF0j6rw0J3hrWrw6iZv3+22h6iRMJ/8z1Tj6XfLP4DsUix5MhMPnXpiHDoKyoZ/bdCkwBCiQ=="
+      }
+    },
+    "npm:url-template": {
+      "type": "npm",
+      "name": "npm:url-template",
+      "data": {
+        "version": "2.0.8",
+        "packageName": "url-template",
+        "hash": "sha512-XdVKMF4SJ0nP/O7XIPB0JwAEuT9lDIYnNsK8yGVe43y0AWoKeJNdv3ZNWh7ksJ6KqQFjOO6ox/VEitLnaVNufw=="
       }
     },
     "npm:util-deprecate": {
@@ -16054,13 +16153,6 @@
         "type": "static"
       }
     ],
-    "npm:@types/react-transition-group": [
-      {
-        "source": "npm:@types/react-transition-group",
-        "target": "npm:@types/react",
-        "type": "static"
-      }
-    ],
     "npm:@types/styled-components": [
       {
         "source": "npm:@types/styled-components",
@@ -18472,18 +18564,6 @@
         "type": "static"
       }
     ],
-    "npm:dom-helpers": [
-      {
-        "source": "npm:dom-helpers",
-        "target": "npm:@babel/runtime",
-        "type": "static"
-      },
-      {
-        "source": "npm:dom-helpers",
-        "target": "npm:csstype",
-        "type": "static"
-      }
-    ],
     "npm:dom-serializer": [
       {
         "source": "npm:dom-serializer",
@@ -20257,6 +20337,59 @@
         "type": "static"
       }
     ],
+    "npm:gaxios": [
+      {
+        "source": "npm:gaxios",
+        "target": "npm:extend",
+        "type": "static"
+      },
+      {
+        "source": "npm:gaxios",
+        "target": "npm:https-proxy-agent@7.0.4",
+        "type": "static"
+      },
+      {
+        "source": "npm:gaxios",
+        "target": "npm:is-stream",
+        "type": "static"
+      },
+      {
+        "source": "npm:gaxios",
+        "target": "npm:node-fetch",
+        "type": "static"
+      }
+    ],
+    "npm:agent-base@7.1.0": [
+      {
+        "source": "npm:agent-base@7.1.0",
+        "target": "npm:debug",
+        "type": "static"
+      }
+    ],
+    "npm:https-proxy-agent@7.0.4": [
+      {
+        "source": "npm:https-proxy-agent@7.0.4",
+        "target": "npm:agent-base@7.1.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:https-proxy-agent@7.0.4",
+        "target": "npm:debug",
+        "type": "static"
+      }
+    ],
+    "npm:gcp-metadata": [
+      {
+        "source": "npm:gcp-metadata",
+        "target": "npm:gaxios",
+        "type": "static"
+      },
+      {
+        "source": "npm:gcp-metadata",
+        "target": "npm:json-bigint",
+        "type": "static"
+      }
+    ],
     "npm:get-intrinsic": [
       {
         "source": "npm:get-intrinsic",
@@ -20404,10 +20537,127 @@
         "type": "static"
       }
     ],
+    "npm:google-auth-library": [
+      {
+        "source": "npm:google-auth-library",
+        "target": "npm:base64-js",
+        "type": "static"
+      },
+      {
+        "source": "npm:google-auth-library",
+        "target": "npm:ecdsa-sig-formatter",
+        "type": "static"
+      },
+      {
+        "source": "npm:google-auth-library",
+        "target": "npm:gaxios",
+        "type": "static"
+      },
+      {
+        "source": "npm:google-auth-library",
+        "target": "npm:gcp-metadata",
+        "type": "static"
+      },
+      {
+        "source": "npm:google-auth-library",
+        "target": "npm:gtoken",
+        "type": "static"
+      },
+      {
+        "source": "npm:google-auth-library",
+        "target": "npm:jws@4.0.0",
+        "type": "static"
+      }
+    ],
+    "npm:jwa@2.0.0": [
+      {
+        "source": "npm:jwa@2.0.0",
+        "target": "npm:buffer-equal-constant-time",
+        "type": "static"
+      },
+      {
+        "source": "npm:jwa@2.0.0",
+        "target": "npm:ecdsa-sig-formatter",
+        "type": "static"
+      },
+      {
+        "source": "npm:jwa@2.0.0",
+        "target": "npm:safe-buffer",
+        "type": "static"
+      }
+    ],
+    "npm:jws@4.0.0": [
+      {
+        "source": "npm:jws@4.0.0",
+        "target": "npm:jwa@2.0.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:jws@4.0.0",
+        "target": "npm:safe-buffer",
+        "type": "static"
+      }
+    ],
+    "npm:googleapis": [
+      {
+        "source": "npm:googleapis",
+        "target": "npm:google-auth-library",
+        "type": "static"
+      },
+      {
+        "source": "npm:googleapis",
+        "target": "npm:googleapis-common",
+        "type": "static"
+      }
+    ],
+    "npm:googleapis-common": [
+      {
+        "source": "npm:googleapis-common",
+        "target": "npm:extend",
+        "type": "static"
+      },
+      {
+        "source": "npm:googleapis-common",
+        "target": "npm:gaxios",
+        "type": "static"
+      },
+      {
+        "source": "npm:googleapis-common",
+        "target": "npm:google-auth-library",
+        "type": "static"
+      },
+      {
+        "source": "npm:googleapis-common",
+        "target": "npm:qs",
+        "type": "static"
+      },
+      {
+        "source": "npm:googleapis-common",
+        "target": "npm:url-template",
+        "type": "static"
+      },
+      {
+        "source": "npm:googleapis-common",
+        "target": "npm:uuid@9.0.1",
+        "type": "static"
+      }
+    ],
     "npm:gopd": [
       {
         "source": "npm:gopd",
         "target": "npm:get-intrinsic",
+        "type": "static"
+      }
+    ],
+    "npm:gtoken": [
+      {
+        "source": "npm:gtoken",
+        "target": "npm:gaxios",
+        "type": "static"
+      },
+      {
+        "source": "npm:gtoken",
+        "target": "npm:jws@4.0.0",
         "type": "static"
       }
     ],
@@ -22393,6 +22643,13 @@
         "type": "static"
       }
     ],
+    "npm:json-bigint": [
+      {
+        "source": "npm:json-bigint",
+        "target": "npm:bignumber.js",
+        "type": "static"
+      }
+    ],
     "npm:jsonfile": [
       {
         "source": "npm:jsonfile",
@@ -23807,38 +24064,6 @@
       {
         "source": "npm:react-dom",
         "target": "npm:scheduler",
-        "type": "static"
-      }
-    ],
-    "npm:react-transition-group": [
-      {
-        "source": "npm:react-transition-group",
-        "target": "npm:react",
-        "type": "static"
-      },
-      {
-        "source": "npm:react-transition-group",
-        "target": "npm:react-dom",
-        "type": "static"
-      },
-      {
-        "source": "npm:react-transition-group",
-        "target": "npm:@babel/runtime",
-        "type": "static"
-      },
-      {
-        "source": "npm:react-transition-group",
-        "target": "npm:dom-helpers",
-        "type": "static"
-      },
-      {
-        "source": "npm:react-transition-group",
-        "target": "npm:loose-envify",
-        "type": "static"
-      },
-      {
-        "source": "npm:react-transition-group",
-        "target": "npm:prop-types",
         "type": "static"
       }
     ],
