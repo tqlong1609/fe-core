@@ -1021,6 +1021,12 @@ npx @tqlong1609/generate --generate functions --type cookies
 
 This TypeScript class provides methods to interact with Google Sheets using the Google Sheets API v4.
 
+🗝️ Install:
+
+```
+npx @tqlong1609/generate --generate functions --type sheets-api
+```
+
 📄 Environment variables
 
 - `GOOGLE_SERVICE_ACCOUNT_EMAIL`: The email address of your Google service account.
